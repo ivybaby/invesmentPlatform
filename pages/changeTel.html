@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>修改手机号</title>
+    <link  rel="stylesheet" href="../css/reset.css">
+    <link  rel="stylesheet" href="../css/investStyle.css">
+    <script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
+</head>
+<body>
+<div id="changeTIndex">
+    <!-- nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left"><img src="../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">修改手机号</h1>
+    </nav>
+    <!-- nav end-->
+
+    <!-- form start-->
+    <form action="#" name="changeTForm" id="changeTForm">
+        <!-- form-group start-->
+        <div class="form-group">
+            <!-- input-group start-->
+            <div class="input-group row">
+                <div class="col-sm-4">
+                    <label>新手机号</label>
+                </div>
+                <div class="col-sm-8">
+                    <a href="#" class="btn btn-small btn-getcode">获取验证码</a>
+                    <input type="text" placeholder="" class="input">
+                </div>
+            </div>
+            <!-- input-group end-->
+
+            <!-- input-group start-->
+            <div class="input-group row">
+                <div class="col-sm-4">
+                    <label>输入验证码</label>
+                </div>
+                <div class="col-sm-8">
+                    <input type="number" placeholder="请输入验证码" class="input" id="vCode">
+                </div>
+            </div>
+            <!-- input-group end-->
+            <small class="row-padding text-danger text-alert">手机号为您的平台登录账号，修改后需要重新登录</small>
+        </div>
+        <div class="row row-padding">
+            <button class="btn btn-block btn-primary  btn-save" >保存</button>
+        </div>
+        <!-- form-group end-->
+    </form>
+    <!-- form end-->
+</div>
+
+ <script type="text/javascript" src="../js/normal-js.js" ></script>
+ <script>
+ $(function(){
+       $("#changeTForm").forgetPwd({
+ 			btnCode:".btn-getcode",
+ 			btnNext:".btn-save",
+ 			codeNum:"#vCode",
+ 			textShow:".text-alert",
+            forget:false
+ 		});
+ 		
+ })
+ 
+</script>
+</body>
+</html>

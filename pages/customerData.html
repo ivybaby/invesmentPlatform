@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>客户资料</title>
+    <link  rel="stylesheet" href="../css/reset.css">
+    <link  rel="stylesheet" href="../css/investStyle.css">
+    <script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
+    <script>
+      //图片上传预览    IE是用了滤镜。
+        function previewImage(file)
+        {
+          var MAXWIDTH  = 90; 
+          var MAXHEIGHT = 90;
+          var div = document.getElementById('preview');
+          if (file.files && file.files[0])
+          {
+              div.innerHTML ='<img id=imghead onclick=$("#previewImg").click()>';
+              var img = document.getElementById('imghead');
+              img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+                img.style.marginTop = rect.top+'px';
+              }
+              var reader = new FileReader();
+              reader.onload = function(evt){img.src = evt.target.result;}
+              reader.readAsDataURL(file.files[0]);
+          }
+          else //兼容IE
+          {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=imghead>';
+            var img = document.getElementById('imghead');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+            div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+          }
+        }
+        
+        function previewFile(file)
+        {
+          var MAXWIDTH  = 90; 
+          var MAXHEIGHT = 90;
+          var div = document.getElementById('previewFile');
+          if (file.files && file.files[0])
+          {
+              div.innerHTML ='<img id=fileimghead onclick=$("#previewFileImg").click()>';
+              var img = document.getElementById('fileimghead');
+              img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+                img.style.marginTop = rect.top+'px';
+              }
+              var reader = new FileReader();
+              reader.onload = function(evt){img.src = evt.target.result;}
+              reader.readAsDataURL(file.files[0]);
+          }
+          else //兼容IE
+          {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=fileimghead>';
+            var img = document.getElementById('fileimghead');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+            div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+          }
+        }
+        function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+            var param = {top:0, left:0, width:width, height:height};
+            if( width>maxWidth || height>maxHeight ){
+                rateWidth = width / maxWidth;
+                rateHeight = height / maxHeight;
+                
+                if( rateWidth > rateHeight ){
+                    param.width =  maxWidth;
+                    param.height = Math.round(height / rateWidth);
+                }else{
+                    param.width = Math.round(width / rateHeight);
+                    param.height = maxHeight;
+                }
+            }
+            param.left = Math.round((maxWidth - param.width) / 2);
+            param.top = Math.round((maxHeight - param.height) / 2);
+            return param;
+        }
+    </script>
+</head>
+<body>
+<div id="customerDataIndex">
+    <!--nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left" ><img src="../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">
+        	<div id="navTabs">
+              <a href="#item1" class="tab-item tab-item-active">
+         		资料
+              </a>
+              <a href="#item2" class="tab-item">意向</a>
+              <a href="#item3" class="tab-item">承租信息</a>
+            </div>
+        </h1>
+         <a href="" class="nav-right"><img src="../img/edit_icon.png" alt="编辑" style="width:16px; vertical-align: sub;"/><span>编辑</span></a>
+    </nav>
+    
+    <!--form start-->
+    <form action="#" name="" style="margin-top: 0;">
+     <div>
+      <div id="item1" class="tab-content">
+      	<!-- name-intro-list start -->
+        <div class="name-intro-list">
+        	<div class="row name-list-head">
+        		<div class="col-sm-3">
+        			<span class="h4 text-primary">经营商户</span>
+        	    </div>
+        	    <div class="col-sm-9">
+        	    	<p class="solid-primary">&nbsp;</p>
+        	    </div>
+            </div>
+            <div class="name-list-body">
+            </div>
+        </div>
+        <!-- name-intro-list end -->
+        
+        <!-- media-list start -->
+       <ul class="media-list media-list-cell">
+       	<li class="media-view-cell"><a href="#" class="cl row">
+       		<div class="col-sm-4">
+       		    <img src="../img/media_1.jpg" alt="media_list_photo" />
+       		</div>
+       		<div class="media-body col-sm-8 color-init margin-bt-default">
+       			<div class="row">
+       				<div class="col-sm-8">姓名:<em class="inner-padding">张先生</em></div>
+       				<span class="pull-right"><em>男</em></span>
+       			</div>
+       			<div class="cl row">电话:<em class="inner-padding">1367488373</em></div>
+       			<div class="cl row">职位:<em class="inner-padding">项目经理</em></div>
+       			<div class="cl row">电子邮箱:<em class="inner-padding">9863554282@qq.com</em></div>
+       		</div>
+       		<div class="h5 row color-init">办公地址：浙江省杭州市洗洗软件园2装一单元304</div>
+       	</a></li>
+       	
+       	<li class="media-view-cell"><a href="#" class="cl row">
+       		<div class="col-sm-4">
+       		    <img src="../img/media_1.jpg" alt="media_list_photo" />
+       		</div>
+       		<div class="media-body col-sm-8 color-init margin-bt-default">
+       			<div class="row">
+       				<div class="col-sm-8">姓名:<em class="inner-padding">张先生</em></div>
+       				<span class="pull-right"><em>男</em></span>
+       			</div>
+       			<div class="cl row">电话:<em class="inner-padding">1367488373</em></div>
+       			<div class="cl row">职位:<em class="inner-padding">项目经理</em></div>
+       			<div class="cl row">电子邮箱:<em class="inner-padding">9863554282@qq.com</em></div>
+       		</div>
+       		<div class="h5 row color-init">办公地址：浙江省杭州市洗洗软件园2装一单元304</div>
+       	</a></li>
+  
+       	</ul>
+       	<!-- media-list end -->
+       	
+       	<!-- name-intro-list start -->
+       	<div class="name-intro-list">
+        	<div class="row name-list-head">
+        		<div class="col-sm-3">
+        			<span class="h4 text-primary">基本资料</span>
+        	    </div>
+        	    <div class="col-sm-9">
+        	    	<p class="solid-primary">&nbsp;</p>
+        	    </div>
+            </div>
+            <div class="name-list-body">
+            	
+            		<div class="name-intro cl padding-lg">
+        	            <div class="row color-init">
+        		            <div class="col-sm-2 text-right"><label class="label">商户编号:</label></div>
+        		            <div class="col-sm-9"><p class="word">983839</p></div>
+        	            </div>
+        	            <div class="row color-init">
+        		            <div class="col-sm-2 text-right"><label class="label">商户名称:</label></div>
+        		            <div class="col-sm-9"><p class="word">杭州铁塔数据科技</p></div>
+        	            </div>
+        	             <div class="row color-init">
+        		            <div class="col-sm-2 text-right"><label class="label">经营方式:</label></div>
+        		            <div class="col-sm-9"><p class="word">自营</p></div>
+        	            </div>
+        	             <div class="row color-init">
+        		            <div class="col-sm-2 text-right"><label class="label">电子版本:</label></div>
+        		            <div class="col-sm-9  big-photo">
+        		            	<div id="preview">
+                                   <img id="imghead" border="0" src="../img/photo_icon.png" width="90" height="90">
+                                </div>         
+                                <input type="file" onchange="previewImage(this)" style="display: none;" id="previewImg">
+                	            <!--<input id="uploaderInput" class="uploader__input" style="display: none;" type="file" accept="" multiple="">-->
+        		            </div>
+        	            </div>
+        	            <div class="row color-init">
+        		            <div class="col-sm-2 text-right"><label class="label">备注:</label></div>
+        		            <div class="col-sm-9"><p class="word">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.  </p>
+        		            </div>
+        	            </div>
+                   </div>
+            
+            </div>
+        	
+       </div>
+       <!-- name-intro-list end -->
+       
+       <!-- name-intro-list start -->
+       	<div class="name-intro-list">
+        	<div class="row name-list-head">
+        		<div class="col-sm-3">
+        			<span class="h4 text-primary">经营资料</span>
+        	    </div>
+        	    <div class="col-sm-9">
+        	    	<p class="solid-primary">&nbsp;</p>
+        	    </div>
+            </div>
+            <div class="name-list-body">
+            	
+            		<div class="name-intro cl padding-lg">
+        	            <div class="row color-init">
+        		            <div class="col-sm-2 text-right"><label class="label">品牌1:</label></div>
+        		            <div class="col-sm-9"><p class="word">品牌名称</p></div>
+        	            </div>
+        	            <div class="row color-init">
+        		            <div class="col-sm-2 text-right"><label class="label">经营方式:</label></div>
+        		            <div class="col-sm-9"><p class="word"></p></div>
+        	            </div>
+        	             <div class="row color-init">
+        		            <div class="col-sm-2 text-right"><label class="label">经销方式:</label></div>
+        		            <div class="col-sm-9"><p class="word"></p></div>
+        	            </div> 
+        	            <div class="row color-init">
+        		            <div class="col-sm-2 text-right"><label class="label">授权类型:</label></div>
+        		            <div class="col-sm-9"><p class="word"></p></div>
+        	            </div>
+        	             <div class="row color-init">
+        		            <div class="col-sm-2 text-right"><label class="label">授权文件:</label></div>
+        		            <div class="col-sm-9  big-photo">
+        		            	<div id="previewFile">
+                                   <img id="fileimghead" border="0" src="../img/photo_icon.png" width="90" height="90">
+                                </div>         
+                                <input type="file" onchange="previewFile(this)" style="display: none;" id="previewFileImg">
+                	            <!--<input id="uploaderInput" class="uploader__input" style="display: none;" type="file" accept="" multiple="">-->
+        		            </div>
+        	            </div>
+        	            <div class="row color-init">
+        		            <div class="col-sm-2 text-right"><label class="label">备注:</label></div>
+        		            <div class="col-sm-9"><p class="word">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.  </p>
+        		            </div>
+        	            </div>
+                   </div>
+            </div>
+        	
+       </div>
+       <!-- name-intro-list end -->
+       
+      </div>
+      
+      
+      
+      <div id="item2" class="tab-content">
+    	 	<!-- message-list start -->
+       <div class="message-list margin-bt-default" style="background: none;">
+       	    
+       	    	 <div class="message-body">
+       	    	 	<div class="row message-item">
+       	    	 	    <ul>
+       	    	 	 	   <li>意向书编号:<em class="inner-item">088783</em></li>
+       	    	 	 	   <li>场地编号:<em class="inner-item">938733</em></li>
+       	    	 	 	   <li>门牌号:<em class="inner-item">38399</em></li>
+       	    	 	 	   <li>场地类型:<em class="inner-item"></em></li>
+       	    	 	 	   <li>资源类别:<em class="inner-item">服装、化妆品</em></li>
+       	    	 	 	   <li>开始日期:<em class="inner-item">2016-10-01</em></li>
+       	    	 	 	   <li>结束日期:<em class="inner-item">2016-10-01</em></li>
+       	    	 	    </ul>
+       	    	 	</div>
+       	    	 </div>
+       	    	 
+       	</div>
+       	<!-- message-list end -->
+       	
+       	<div class="row padding-lg" style="background: #FFFFFF;" >
+       		<h4 class="text-center">此处显示意向书的world文档</h4>
+       		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod </p>
+       	</div>
+      </div>
+      
+      <div id="item3" class="tab-content">
+    	<!-- message-list start -->
+       <div class="message-list margin-bt-default">
+       	    	 <div class="message-head">
+       	    	 </div>
+       	    	 <div class="message-body">
+       	    	 	<div class="row message-item">
+       	    	 	    <ul>
+       	    	 	 	   <li>场地编号:<em class="inner-item">2477555</em></li>
+       	    	 	 	   <li>门牌号:<em class="inner-item">839948</em></li>
+       	    	 	 	   <li>场地类型:<em class="inner-item">服装、化妆品</em></li>
+       	    	 	 	   <li>资源类别:<em class="inner-item">化妆品</em></li>
+       	    	 	 	   <li>开始日期:<em class="inner-item">2016-10-01</em></li>
+       	    	 	 	   <li>结束日期:<em class="inner-item">2016-10-01</em></li>
+       	    	 	    </ul>
+       	    	 	</div>
+       	    	 </div>
+       	    	 <img src="../img/relet_flag_icon.png" alt="" class="flag"  />
+       	</div>
+       	<!-- message-list end -->
+      </div>
+      
+      
+    </div> 
+      
+    </form>
+    <!--form end-->
+</div>
+ <script type="text/javascript" src="../js/normal-js.js" ></script>
+ <script>
+  $(function(){
+  	  $("#navTabs").tab({
+			tabItem:".tab-item",
+			tabContent:".tab-content"
+		});
+		$("#fileimghead").on("click",function(e){
+			e.preventDefault();
+			$('#previewFileImg').click();
+		});
+		$("#imghead").on("click",function(e){
+			e.preventDefault();
+			$('#previewImg').click();
+		})
+  })
+ 	   
+ </script>
+</body>
+</html>

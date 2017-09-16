@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>铺位信息</title>
+    <link  rel="stylesheet" href="../css/reset.css">
+    <link  rel="stylesheet" href="../css/investStyle.css">
+
+    <script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
+</head>
+<body >
+<div id="customerIndex">
+    <!--nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left" ><img src="../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center" >2394-2</h1>
+    </nav>
+    <!--nav end-->
+    
+    <div id="slideTabs" class="row row-padding">
+         <a href="#item1" class="tab-item tab-item-active col-sm-3">
+         		基本信息
+         </a>
+         <a href="#item2" class="tab-item col-sm-3">规划信息</a>
+         <a href="#item3" class="tab-item col-sm-3">物理信息</a>
+         <a href="#item4" class="tab-item col-sm-3">平面效果</a>
+    </div>
+
+    <!--form start-->
+    <form action="#" name="" style="margin-top:10px;">
+    
+    <div style="background: #FFFFFF;" class="padding-lg">
+      <div id="item1" class="tab-content">
+      	<!-- list-item start-->
+       <div class="list-item">
+         	<ol>
+         		<li><label class="label tip-impt">单元编号:</label><em class="inner-item">2-302</em></li>
+         		<li><label class="label">门牌号:</label><em class="inner-item">3994484</em></li>
+         		<li><label class="label tip-impt">所属门店:</label><em class="inner-item">西城广场</em></li>
+         		<li><label class="label tip-impt">铺位类型:</label><em class="inner-item">商铺</em></li>
+         		<li><label class="label">所在楼栋:</label><em class="inner-item">南楼</em></li>
+         		<li><label class="label tip-impt">所在楼层:</label><em class="inner-item">2层</em></li>
+         		<li><label class="label tip-impt">建筑面积:</label><em class="inner-item">80m<sup>2</sup></em></li>
+         		<li><label class="label">可用面积:</label><em class="inner-item">70m<sup>2</sup></em></li>
+         	    <li><label class="label">状态:</label><em class="inner-item">已出租</em></li>
+         		<li><label class="label">备注:</label><em class="inner-item">关于该店铺信息</em></li>
+         	</ol>
+       	   
+       </div>
+       <!-- list-item end-->
+       
+      </div>
+      
+      
+      <div id="item2" class="tab-content">
+    	<!-- list-item start-->
+       <div class="list-item">
+         	<ol>
+         		<li><label class="label">规划品类:</label><em class="inner-item">餐饮</em></li>
+         		<li><label class="label">位置系数:</label><em class="inner-item">3994484</em></li>
+         		<li><label class="label">月度单位面积收入预算:</label><em class="inner-item">￥5000.00</em></li>
+         		<li><label class="label">月度收入预算:</label><em class="inner-item">￥5000.00</em></li>
+         	</ol>  
+       </div>
+       <!-- list-item end-->
+      </div>
+      
+      <div id="item3" class="tab-content">
+    	<!-- list-item start-->
+       <div class="list-item">
+         	<ol>
+         		<li><label class="label">层高:</label><em class="inner-item">3米</em></li>
+         		<li><label class="label">展示面长度:</label><em class="inner-item">6米</em></li>
+         		<li><label class="label">净深:</label><em class="inner-item">4米</em></li>
+         		<li><label class="label">承重:</label><em class="inner-item">100公斤</em></li>
+         		<li><label class="label">上水:</label><em class="inner-item">有</em></li>
+         		<li><label class="label">下水:</label><em class="inner-item">有</em></li>
+         		<li><label class="label">燃气:</label><em class="inner-item">有</em></li>
+         		<li><label class="label">电压:</label><em class="inner-item">360V</em></li>
+         	</ol>  
+       </div>
+       <!-- list-item end-->
+      </div>
+      
+      
+    </div> 
+    
+    </form>
+    <!--form end-->
+</div>
+<script type="text/javascript" src="../js/normal-js.js" ></script>
+<script>
+	$(function(){
+		$("#slideTabs").tab({
+			tabItem:".tab-item",
+			tabContent:".tab-content"
+		});
+	})
+</script>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>商户信息</title>
+    <link  rel="stylesheet" href="../css/reset.css">
+    <link  rel="stylesheet" href="../css/investStyle.css">
+    <link rel="stylesheet" href="../css/mui.picker.min.css" />
+    <script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
+</head>
+<body>
+
+<div id="merchantIndex" >
+    <!--nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left" ><img src="../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">商户信息</h1>
+        <a href="#" id="filterBtn" class="nav-right" style="top:10px"><img src="../img/add_icon.png" alt="新增" style="width:18px; vertical-align:sub;"/><span>新增商户</span></a>
+    </nav>
+    <!--nav end-->
+    <div class="row row-padding search-bar">
+    	<a href="#" class="search-icon"><img src="../img/search_icon.png" /></a>
+    	<input type="text" value="" placeholder="搜索" class="btn-block input input-search" />
+    	<a href="#" class="cancel-icon"><img src="../img/cancel_icon.png" /></a>
+    </div>
+    <!--form start-->
+    <form action="#" name="" style="margin-top: 0;">
+      <a href="merchantInfor-more.html">
+       <!-- message-list start -->
+       <div class="message-list">
+       	    	 <div class="message-head">
+       	    	 	  <label class="h4">商户名称全称：<em class="pull-right message-list-icon"><em class="status">已入住</em><img src="../img/more_icon.png" /></em></label>
+       	    	 </div>
+       	    	 <div class="message-body">
+       	    	 	<div class="row message-item">
+       	    	 	    <ul>
+       	    	 	 	   <li>品牌经营:<em class="inner-item">ONLY</em></li>
+       	    	 	 	   <li>经营方式:<em class="inner-item">自营</em></li>
+       	    	 	 	   <li>联系人:<em class="inner-item">张先生&nbsp;18364677883</em><em class="inner-item pull-right">2016-12-28&nbsp;12:12</em></li>
+       	    	 	    </ul>
+       	    	 	</div>
+       	    	 </div>
+       	</div>
+       	<!-- message-list end -->
+       	</a>
+       	
+       	<a href="merchantInfor-more.html">
+       <!-- message-list start -->
+       <div class="message-list">
+       	    	 <div class="message-head">
+       	    	 	  <label class="h4">商户名称全称：<em class="pull-right message-list-icon"><em class="status">意向</em><img src="../img/more_icon.png" /></em></label>
+       	    	 </div>
+       	    	 <div class="message-body">
+       	    	 	<div class="row message-item">
+       	    	 	    <ul>
+       	    	 	 	   <li>品牌经营:<em class="inner-item">ONLY</em></li>
+       	    	 	 	   <li>经营方式:<em class="inner-item">自营</em></li>
+       	    	 	 	   <li>联系人:<em class="inner-item">张先生&nbsp;18364677883</em><em class="inner-item pull-right">2016-12-28&nbsp;12:12</em></li>
+       	    	 	    </ul>
+       	    	 	</div>
+       	    	 </div>
+       	</div>
+       	<!-- message-list end -->
+       	</a>
+       
+    </form>
+    <!--form end-->
+   <div class="bottom-bar bottom-bar-tab">
+			<a class="tab-item" href="#" data-src="../img/talk_active_icon.png">
+				<p><img src="../img/talk_normal_icon.png" alt="洽谈" style="width:22px;" /></p>
+				<span class="tab-label">洽谈</span>
+			</a>
+			<a class="tab-item" href="#" id='' data-src="../img/time_active_icon.png">
+				<p><img src="../img/time_normal_icon.png" alt="时间" style="width:21px;"/></p>
+				<span class="tab-label">时间</span>
+			</a>
+			<a class="tab-item" href="#" id='showUserPicker' data-src="../img/status_active_icon.png">
+				<p><img src="../img/status_normal_icon.png" alt="状态" style="width:20px;"/></p>
+				<span class="tab-label">状态</span>
+			</a>
+			
+	</div>
+</div>
+<div id="mask" class="cl"></div>
+<!-- 状态选择的值 -->
+<div id='userResult' class="ui-alert" style="display: none;">
+</div>
+<script type="text/javascript" src="../js/dtpicker/mui.min.js" ></script>
+<script type="text/javascript" src="../js/dtpicker/mui.picker.min.js" ></script>
+<script type="text/javascript" src="../js/normal-js.js" ></script>
+<script>
+ 	$(function(){
+ 		$(".cancel-icon").hide();
+ 		$(".search-bar").getSearch();
+        $(".bottom-bar .tab-item").hover(function(){
+        	var dataSrc=$(this).data("src");
+        	var oriSrc=$(this).find("img").attr("src");
+        	$(this).find("img").attr("src",dataSrc).end().data("src",oriSrc);
+        	$(this).css({"color":"#008ce6"});
+        },function(){
+        	var dataSrc=$(this).data("src");
+        	var oriSrc=$(this).find("img").attr("src");
+        	$(this).find("img").attr("src",dataSrc).end().data("src",oriSrc);
+        	$(this).css({"color":"#414141"});
+        });
+       
+ 	});
+</script>
+ <script>
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					//普通示例
+					var userPicker = new $.PopPicker();
+					userPicker.setData([{
+						value: 'yes',
+						text: '签约'
+					}, {
+						value: 'no',
+						text: '意向'
+					}, {
+						value: 'all',
+						text: '无状态'
+					}]);
+					var showUserPickerButton = doc.getElementById('showUserPicker');
+					var userResult = doc.getElementById('userResult');
+					showUserPickerButton.addEventListener('tap', function(event) {
+						userPicker.show(function(items) {
+							userResult.innerText = JSON.stringify(items[0]);
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					
+				});
+			})(mui, document);
+		</script>
+ 
+</body>
+</html>

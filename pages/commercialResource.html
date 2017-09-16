@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>商业资源</title>
+    <link  rel="stylesheet" href="../css/reset.css">
+    <link  rel="stylesheet" href="../css/investStyle.css">
+    <script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
+</head>
+<body>
+
+<div id="commercialResoure" >
+    <!--nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left" ><img src="../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">商业资源</h1>
+        <a href="#" id="filterBtn" class="nav-right" style="top:10px"><img src="../img/filtrate_icon.png" alt="筛选" style="width:20px; vertical-align:-2px;"/><span>筛选</span></a>
+    </nav>
+    <!--nav end-->
+    <div class="row row-padding search-bar">
+    	<a href="#" class="search-icon"><img src="../img/search_icon.png" /></a>
+    	<input type="text" value="" placeholder="搜索" class="btn-block input input-search" />
+    	<a href="#" class="cancel-icon"><img src="../img/cancel_icon.png" /></a>
+    </div>
+    <!--form start-->
+    <form action="#" name="" style="margin-top: 0;">
+      <a href="storesInfo.html">
+       <!-- message-list start -->
+       <div class="message-list">
+       	    	 <div class="message-head">
+       	    	 	  <label class="h4">场地编号：<em>839994</em></label>
+       	    	 </div>
+       	    	 <div class="message-body">
+       	    	 	<div class="row message-item">
+       	    	 	    <ul>
+       	    	 	 	   <li>门牌号:<em class="inner-item">24455</em></li>
+       	    	 	 	   <li>场地类型:<em class="inner-item">体育</em></li>
+       	    	 	 	   <li>资源类别:<em class="inner-item">滋滋滋</em></li>
+       	    	 	 	   <li>经营品类:<em class="inner-item">lalla</em></li>
+       	    	 	    </ul>
+       	    	 	</div>
+       	    	 </div>
+       	    	 <img src="../img/status_flag_in.png" alt="" class="flag"  />
+       	</div>
+       	<!-- message-list end -->
+       	</a>
+       	<a href="storesInfo.html">
+       	<!-- message-list start -->
+       <div class="message-list">
+       	    	 <div class="message-head">
+       	    	 	  <label class="h4">场地编号：<em>839994</em></label>
+       	    	 </div>
+       	    	 <div class="message-body">
+       	    	 	<div class="row message-item">
+       	    	 	    <ul>
+       	    	 	 	   <li>门牌号:<em class="inner-item">24455</em></li>
+       	    	 	 	   <li>场地类型:<em class="inner-item">体育</em></li>
+       	    	 	 	   <li>资源类别:<em class="inner-item">滋滋滋</em></li>
+       	    	 	 	   <li>经营品类:<em class="inner-item">lalla</em></li>
+       	    	 	    </ul>
+       	    	 	</div>
+       	    	 </div>
+       	    	 <img src="../img/status_flag_out.png" alt="" class="flag"  />
+       	</div>
+       	<!-- message-list end -->
+       </a>
+    </form>
+    <!--form end-->
+    <div class="bottom-bar bottom-bar-tab">
+			<a class="tab-item" href="#" style="font-size: 20px; color: #AAAAAA;">
+				共(&nbsp;<em>1080</em>&nbsp;)个
+			</a>
+	</div>
+</div>
+<div id="mask" class="cl"></div>
+<div id="filtrate" class="cl row">
+	<div class="row" style="padding:0 15px 10px;">
+		 <a href="#" class="btn btn-small pull-left text-center" style="width:85px;background: #aaa; color: #FFFFFF;border: none;">撤销</a>
+    	 <a href="#" class="btn btn-primary btn-small pull-right text-center" style="width:85px;">确定</a>
+	</div>
+    <div class="filtrate-content row cl" >
+    	 <div id="filtrateTab" class="col-sm-6">
+    	 	<ul>
+             <li><a href="#item1" class="tab-item tab-item-active">所属楼栋</a></li>
+             <li><a href="#item2" class="tab-item">所属楼层</a></li>
+             <li><a href="#item3" class="tab-item">资源状态</a></li>
+             <li><a href="#item4" class="tab-item">出租状态</a></li>
+             <li><a href="#item3" class="tab-item">资源类别</a></li>
+             <li><a href="#item4" class="tab-item">场地类型</a></li>
+             <li><a href="#item4" class="tab-item">业态</a></li>
+            </ul>
+        </div>
+       <div class="col-sm-6">
+           <div id="item1" class="tab-content">
+             <ol>
+         		<li><a href="#" index="1">A座</a></li>
+         		<li><a href="#" index="2">B座</a></li>
+         		<li><a href="#" index="3">C座</a></li>
+         		<li><a href="#" index="4">D座</a></li>
+             </ol>
+           </div>
+      
+          <div id="item2" class="tab-content">
+    	     <ol>
+         		<li><a href="#" index="1">1楼</a></li>
+         		<li><a href="#" index="2">2楼</a></li>
+         		<li><a href="#" index="3">3楼</a></li>
+         		<li><a href="#" index="4">4楼</a></li>
+             </ol>
+          </div>
+      
+          <div id="item3" class="tab-content">
+    	     <ol>
+         		<li><a href="#" index="1">已使用</a></li>
+         		<li><a href="#" index="2">未使用</a></li>
+             </ol>
+          </div>
+      
+          <div id="item4" class="tab-content">
+    	     <ol>
+         		<li><a href="#" index="1">未出租</a></li>
+         		<li><a href="#" index="2">已出租</a></li>
+         		<li><a href="#" index="3">续租</a></li>
+             </ol>
+           </div>
+      
+         </div> 
+    
+   
+    </div>
+</div>
+
+<script type="text/javascript" src="../js/normal-js.js" ></script>
+<script>
+ 	$(function(){
+ 		$(".cancel-icon").hide();
+ 		$(".search-bar").getSearch();
+ 		
+ 		$("#filtrate").on("click",function(e){
+			e.stopPropagation();//防止触发冒泡
+		});
+		
+		$("#filtrate .tab-content li").each(function(i){
+			var count=$(this).children("a").attr("index");
+			if((count%2)!=0){
+				$(this).addClass("even");
+			}
+		})
+		
+		$("#filterBtn").on("click",function(e){
+			e.preventDefault();
+			$("#filtrate").modal({
+				    maskName:"#mask",
+				    targetObject:"#filtrate",
+				    maskShadow:true,
+				    actionBottom:true,
+				    actionCenter:true,
+				    positionFix:true,
+				    bgLong:".filtrate-content"
+	        });
+	       
+		    $("#filtrate a.btn,#mask").on("click",function(e){
+ 			   e.preventDefault();
+ 			   $("#mask,#filtrate").css({"display":"none"});
+ 		   });
+ 		    $("#filtrateTab").tab({
+			  tabItem:".tab-item",
+			  tabContent:".tab-content"
+		    });
+		});
+		
+ 	});
+</script>
+ 
+</body>
+</html>

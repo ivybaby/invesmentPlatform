@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>平面图</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/investStyle.css" />
+    <script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
+   
+</head>
+<body>
+<div class="row" id="platPhotoIndex">
+	<a href="javascript:history.go(-1);" class="back-icon"><img src="../img/cancel_icon.png"  /></a>
+	<div id="orientPhoto">
+		<img src="../img/media_1.jpg"  style="width: 100%;"/>
+	</div>
+	
+</div>
+<script>
+$(function(){
+	//判断手机横竖屏状态：
+   function hengshuping(){
+      if(window.orientation==180||window.orientation==0){
+         //alert("竖屏状态！")
+         return;
+      }
+      if(window.orientation==90||window.orientation==-90){
+         //alert("横屏状态！")
+         return;
+       }
+    }
+    hengshuping();
+    window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", hengshuping, false);
+});
+	
+</script>
+</body>
+
+</html>

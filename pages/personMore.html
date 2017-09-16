@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>人员详情</title>
+    <link  rel="stylesheet" href="../css/reset.css">
+    <link  rel="stylesheet" href="../css/investStyle.css">
+    <script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
+</head>
+<body>
+<div id="personMoreIndex">
+    <!--nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left"><img src="../img/back_icon.png" alt="back_icon"  /></a>
+        <h1 class="text-center">人员详情</h1>
+        <a href="#" class="nav-right"><img src="../img/edit_icon.png" alt="edit_icon" style="width:16px; vertical-align: sub;"/><span >编辑</span></a>
+    </nav>
+   
+    <!--form start-->
+    <form action="#" name="">
+       <!--form-group start-->
+        <div class="form-group form-nobg form-group-small">
+            <!--input-group start-->
+            <div class="input-group row">
+                <div class="col-sm-3">
+                    <label>人员名称</label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="text" placeholder="159782617221" class="input disabled" disabled="disabled" >
+                </div>
+            </div>
+            <!--input-group end-->
+
+            <!--input-group start-->
+            <div class="input-group row">
+                <div class="col-sm-3">
+                    <label>手机号码</label>
+                </div>
+                <div class="col-sm-9" >
+                    <input type="text" placeholder="请输入" class="input disabled" disabled="disabled">
+                     <small class="text-danger">手机号码会作为收银系统的账号</small>
+                </div>
+            </div>
+            <!--input-group end-->
+
+            <!--input-group start-->
+            <div class="input-group row">
+                <div class="col-sm-3">
+                    <label>人员类型</label>
+                </div>
+                <div class="col-sm-9" style="padding-right: 15px;">
+                    <div class="col-sm-6" style="padding-right: 5px;">
+                    	<select class="select disabled" disabled="disabled">
+                    	   <option>导购</option>
+                    	   <option>店员</option>
+                        </select>
+                    </div>
+                     <div class="col-sm-6" style="padding-left: 5px;">
+                    	<select class="select disabled" disabled="disabled">
+                    	   <option>7</option>
+                    	   <option>8</option>
+                        </select>
+                    </div>
+                  
+                </div>
+                 <small class="text-danger col-sm-offset-3">类型决定着人员在收银系统里的权限</small>
+            </div>
+            <!--input-group end-->
+
+            <!--input-group start-->
+            <div class="input-group row">
+                <div class="col-sm-3">
+                    <label>性别</label>
+                </div>
+                <div class="col-sm-9">
+                    <select class="select disabled" disabled="disabled">
+                    	<option>未知</option>
+                    	<option>男</option>
+                    	<option>女</option>
+                    </select>
+                </div>
+            </div>
+            <!--input-group end-->
+
+            <!--input-group start-->
+            <div class="input-group row">
+                <div class="col-sm-3">
+                    <label>在职状态</label>
+                </div>
+                <div class="col-sm-9">
+                    <div class="col-sm-3" style="padding-top:6px;">
+                    	<input type="radio" name="staus" class="disabled" disabled="disabled"/>
+                    	在职
+                   	</div>
+                   	<div class="col-sm-3" style="padding-top:6px;">
+                    	<input type="radio" name="staus" class="disabled" disabled="disabled"/>
+                    	离职
+                   	</div>
+                </div>
+            </div>
+            <!--input-group end-->
+       
+        </div>
+        <!--form-group end-->
+       
+    </form>
+    <!--form end-->
+</div>
+<script type="text/javascript" src="../js/normal-js.js" ></script>
+<script>
+	$(function(){
+		$("#personMoreIndex a.nav-right").on("click",function(){
+ 		if($(this).find("span").hasClass("nav-save")){
+ 			$(this).find("span").text("编辑").removeClass("nav-save");
+ 			$(".disabled").each(function(){
+ 			    $(this).prop("disabled","disabled");
+ 			
+ 		    });
+ 		}else{
+ 			$(this).find("span").text("完成").addClass("nav-save");
+ 		    $(".disabled").each(function(){
+ 			    $(this).removeProp("disabled");
+ 		    });
+ 		
+ 		}
+ 		
+ 	});
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>首页</title>
+    <link  rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/mui.picker.min.css" />
+    <link  rel="stylesheet" href="css/investStyle.css">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+
+</head>
+<body>
+	
+<div id="homeIndex">
+        <!--nav start-->
+        <nav class="nav">
+            <a href="pages/messageManage.html" class="nav-left message" ><img src="img/message_icon.png" alt="" />
+               <span class="message-num">200</span>
+            </a>
+            <h1 class="text-center">首页</h1>
+            <a href="pages/personalCenter.html" class="nav-right"><img src="img/home_icon.png" alt="back_icon" /></a>
+        </nav>
+        <!--nav end-->
+
+        <!-- form start-->
+        <form action="#" name="homeForm" id="homeForm" style="margin-top: 0;">
+            <article>
+            	<a href="#" class="text-center text-primary mui-btn mui-btn-block" id='demo6' data-options='{"type":"month"}'>12月</a>
+            	
+            	<div class="row">
+            		<section class="col-sm-3 text-center">
+            		    <h1 class="bg-1">
+            		 	    9999<span >人</span>
+            		    </h1>
+            		    <h4>潜在客户</h4>
+            		</section>
+            		<section class="col-sm-3 text-center">
+            		    <h1 class="bg-2">
+            		 	    4563<span >次</span>
+            		    </h1>
+            		    <h4>洽谈次数</h4>
+            		</section>
+            		<section class="col-sm-3 text-center">
+            		    <h1 class="bg-3">
+            		 	    9999<span >份</span>
+            		    </h1>
+            		    <h4>意向合同</h4>
+            		</section>
+            		<section class="col-sm-3 text-center">
+            		    <h1 class="bg-4">
+            		 	    8374<span >份</span>
+            		    </h1>
+            		    <h4>签约合同</h4>
+            		</section>
+            		<section class="col-sm-3 text-center">
+            		    <h1 class="bg-5">
+            		 	    2456<span>m<sup>2</sup></span>
+            		    </h1>
+            		    <h4>签约面积</h4>
+            		</section>
+            		<section class="col-sm-3 text-center">
+            		    <h1 class="bg-6">
+            		 	    9999<span >万</span>
+            		    </h1>
+            		    <h4>预计收入</h4>
+            		</section>
+            		<section class="col-sm-3 text-center">
+            		    <h1 class="bg-7">
+            		 	    999<span >万</span>
+            		    </h1>
+            		    <h4>实际收银</h4>
+            		</section>
+            		
+                </div>
+        
+            </article>
+            <div class="row row-padding">
+               <button class="btn btn-block btn-green"><a href="#proOverview" class="row proOverview">项目概况</a></button>
+               <button class="btn btn-block btn-primary" ><a href="#workbench" class="row workbench">工作台</a></button>
+               <button class="btn btn-block btn-purple" ><a href="#investNews" class="row investNews">招商动态</a></button>
+               <button class="btn btn-block btn-orange" ><a href="pages/personManage.html" class="row">人员管理</a></button>
+            </div>
+        </form>
+       <!-- form end-->
+       
+       <footer class="row text-center">
+       	  <a href="#" class="bg-1 start-btn">洽谈开始</a>
+       	  
+       	  <h4 class="text-primary">统计</h4>
+       </footer>
+
+</div>
+<div id="mask" class="cl"></div>
+<!-- 项目概况 -->
+<div id="proOverview">
+     <a href="pages/platPhoto.html" class="row btn text-center">项目平面图</a>
+     <a href="pages/brandBase.html" class="row btn text-center">品牌库</a>
+     <a href="pages/commercialActivities.html" class="row btn text-center">业态</a>
+     <a href="pages/commercialResource.html" class="row btn text-center">商业资源</a>
+</div>
+<!-- 工作台 -->
+<div id="workbench">
+     <a href="pages/merchantInfor.html" class="row btn text-center">商户管理</a>
+     <a href="pages/billDataView.html" class="row btn text-center">商机管理</a>
+     <a href="pages/paymentView.html" class="row btn text-center">意向书管理</a>
+</div>
+<!-- 招商动态 -->
+<div id="investNews">
+     <a href="pages/dataQuery.html" class="row btn text-center">商户管理</a>
+     <a href="pages/billDataView.html" class="row btn text-center">商机管理</a>
+</div>
+<!-- 洽谈 -->
+<div id="lightbox" class="cl">
+    <h5 class="row">当前系统不能定位到您的位置，请输入您的位置信息：</h5>
+    <div class="row">
+    	<div class="col-sm-2">
+    		<img src="img/map_icon.png" alt="定位" style="width: 22px;" class="pull-left" />
+    	</div>
+    	<div class="col-sm-10">
+    		<input type="text" placeholder="杭州西溪软件园" class="input" >
+    	</div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+    	 <a href="#" class="btn btn-small pull-left" style="width:85px;background: #aaa; color: #FFFFFF;border: none;">取消打卡</a>
+    	 <a href="#" class="btn btn-primary btn-small pull-right" style="width:85px;">确定打卡</a>
+    </div>
+</div>
+
+<div id="noMapping" class="cl">
+    <h5 class="row text-center">您的手机未开启定位功能，<br />请到"设置"中去打开您的定位功能</h5>
+    <div class="row" style="margin-top: 20px;">
+    	 <a href="#" class="btn btn-small pull-left text-center" style="width:85px;background: #aaa; color: #FFFFFF;border: none;">取消</a>
+    	 <a href="#" class="btn btn-primary btn-small pull-right text-center" style="width:85px;">设置</a>
+    </div>
+</div>
+       
+<script type="text/javascript" src="js/normal-js.js" ></script>
+<script type="text/javascript" src="js/dtpicker/mui.min.js"></script>
+<script type="text/javascript" src="js/dtpicker/mui.picker.min.js"></script>
+<script>
+	$(function(){
+		//message
+		var $message=$(".message").children(".message-num");
+		var num=parseInt($message.text());
+		if(num>99){
+			$message.text("99+");
+		}
+	
+		$("input[type='text'],input[type='number'],input[type='password']").inFocus();
+		$("#proOverview,#workbench,#investNews,#lightbox").on("click",function(e){
+			e.stopPropagation();//防止触发冒泡
+		});
+		$(".proOverview").on("click",function(e){
+			e.preventDefault();//阻止默认触发事件
+			e.stopPropagation();//防止触发冒泡
+			$("#proOverview").modal({
+				maskName:"#mask",
+				targetObject:"#proOverview",
+				maskShadow:true,
+				actionBottom:true,
+				actionCenter:false
+			});
+		});
+		//工作台
+		$(".workbench").on("click",function(e){
+			e.preventDefault();//阻止默认触发事件
+			e.stopPropagation();//防止触发冒泡
+			$("#workbench").modal({
+				maskName:"#mask",
+				targetObject:"#workbench",
+				maskShadow:true,
+				actionBottom:true,
+				actionCenter:false
+			});
+		});
+		//招商动态
+		$(".investNews").on("click",function(e){
+			e.preventDefault();//阻止默认触发事件
+			e.stopPropagation();//防止触发冒泡
+			$("#investNews").modal({
+				maskName:"#mask",
+				targetObject:"#investNews",
+				maskShadow:true,
+				actionBottom:true,
+				actionCenter:false
+			});
+		});
+		
+		$(".start-btn").on("click",function(e){
+			e.preventDefault();
+			$("#lightbox").modal({
+				    maskName:"#mask",
+				    targetObject:"#lightbox",
+				    maskShadow:true,
+				    actionBottom:true,
+				    actionCenter:true
+	        });
+	        $("#lightbox a.btn").on("click",function(e){
+ 			   e.preventDefault();
+ 			   $("#mask").click();	
+ 		    })
+		})
+		
+	})
+</script>
+<script>
+			(function($) {
+				$.init();
+				var result = $('.mui-btn-block')[0];
+				var btns = $('.mui-btn');
+				var temp=0;
+				btns.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						    temp++;
+							var optionsJson = this.getAttribute('data-options') || '{}';
+						    var options = JSON.parse(optionsJson);
+						    var id = this.getAttribute('id');
+						    var picker = new $.DtPicker(options);
+						    /*
+							 * rs.value 拼合后的 value
+							 * rs.text 拼合后的 text
+							 * rs.y 年，可以通过 rs.y.value 和 rs.y.text 获取值和文本
+							 * rs.m 月，用法同年
+							 * rs.d 日，用法同年
+							 * rs.h 时，用法同年
+							 * rs.i 分（minutes 的第二个字母），用法同年
+							 */
+						    
+						    if(temp==1){
+						       picker.show(function(rs) {
+							      result.innerText =rs.m.value+"月";
+							      picker.dispose();
+							      temp=0;
+						        });
+					 	    }
+						
+					}, false);
+				});
+				
+				
+				
+			})(mui);
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>修改密码</title>
+    <link  rel="stylesheet" href="../css/reset.css">
+    <link  rel="stylesheet" href="../css/investStyle.css">
+    <script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
+</head>
+<body>
+<div id="modifyIndex">
+    <!--nav start -->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left" ><img src="../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">修改密码</h1>
+    </nav>
+    <!--nav end -->
+
+    <!--form start -->
+    <form action="#" name="modifyForm" id="modifyForm">
+        <!--form-group start -->
+        <div class="form-group">
+            <!--input-group start -->
+            <div class="input-group row">
+                <div class="col-sm-3" >
+                    <label>账号</label>
+                </div>
+                <div class="col-sm-9" >
+                    <input type="text" placeholder="" class="input" id="user_tel" value="15968172193">
+                </div>
+            </div>
+            <!--input-group end -->
+
+            <!--input-group start -->
+            <div class="input-group row">
+                <div class="col-sm-3">
+                    <label>原密码</label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="password" placeholder="请输入原密码" class="input" value="111111" id="user_pwd_o">
+                </div>
+            </div>
+            <!--input-group end -->
+
+            <!--input-group start -->
+            <div class="input-group row">
+                <div class="col-sm-3">
+                    <label>新密码</label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="password" placeholder="请输入6-11个字以内的数字或字母" class="input" max="11" id="user_pwd_n">
+                </div>
+            </div>
+            <!--input-group end -->
+
+            <!--input-group start -->
+            <div class="input-group row">
+                <div class="col-sm-3">
+                    <label>确认密码</label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="password" placeholder="请再次输入密码" class="input" id="user_pwd_sure">
+                </div>
+            </div>
+            <!--input-group end -->
+        </div>
+        <small class="row-padding text-danger text-alert text-center"></small>
+        <!--form-group end -->
+        <div class="row row-padding">
+            <button value="" class="btn btn-block btn-primary btn-save">保存</button>
+        </div>
+    </form>
+    <!--form end -->
+</div>
+ <script type="text/javascript" src="../js/normal-js.js" ></script>
+ <script>
+ 	$(function(){
+ 		$("#modifyForm").modifyPwd({
+ 			textAlert:".text-alert",
+ 			small:false
+ 		});
+ 	})
+ </script>
+</body>
+</html>

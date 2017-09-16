@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>业态</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/investStyle.css" />
+    <link rel="stylesheet" href="../css/zTree/zTreeStyle.css" />
+    <script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
+    <script type="text/javascript" src="../js/zTree/jquery.ztree.core.js" ></script>
+    <SCRIPT type="text/javascript">
+		<!--
+		var setting = {	};
+
+		var zNodes =[
+			{ name:"所有品类", open:true,
+				children: [
+					{ name:"零售",open:true,
+						children: [
+							{ name:"服装"},
+							{ name:"精品"},
+							{ name:"皮具/鞋履/箱包",open:true,
+							     children: [
+							      { name:"鞋履"},
+							      { name:"皮具/箱包"}
+						         ]},
+							{ name:"运动健身",open:true, 
+							     children: [
+							      { name:"体育用品"},
+							      { name:"健身器材"},
+								  { name:"运动服饰"}
+						         ]},
+							{ name:"童装/玩具"},
+							{ name:"个人护理",open:true,
+							     children: [
+							      { name:"化妆品"},
+							      { name:"保健品"},
+								  { name:"保健器材"}
+						         ]},
+							{ name:"生活家居",open:true,
+							     children: [
+							      { name:"家居用品"},
+							      { name:"家私家居"},
+								  { name:"数码电器/影音"},
+								  { name:"零食/食品"},
+								  { name:"艺术装饰"},
+							      { name:"茶叶茶艺"},
+								  { name:"服装家居综合店"}
+						         ]}
+						]},
+					{ name:"餐饮"},
+					{ name:"服务配置", isParent:true,open:true},
+					{ name:"娱乐休闲"},
+					{ name:"商业物业"}
+				]}
+
+		];
+
+		$(document).ready(function(){
+			$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+		});
+		//-->
+	</SCRIPT>
+</head>
+<body style="background: #FFFFFF;">
+<div id="comActIndex">
+    <!--nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left"><img src="../img/back_icon.png" alt="back_icon"  /></a>
+        <h1 class="text-center">业态</h1>  
+    </nav>
+   
+    <!--form start-->
+    <form action="#" name="" class="row-padding" style="margin-top: 5px;">
+       <ul id="treeDemo" class="ztree"></ul>
+    </form>
+    <!--form end-->
+</div>
+
+</body>
+</html>

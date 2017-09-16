@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>品牌库</title>
+    <link  rel="stylesheet" href="../css/reset.css">
+    <link  rel="stylesheet" href="../css/investStyle.css">
+    <link rel="stylesheet" href="../css/mui.picker.min.css" />
+    <script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
+</head>
+<body>
+<div id="brandIndex">
+    <!--nav start-->
+    <nav class="nav">
+        <a href="javascript:history.go(-1)" class="nav-left" ><img src="../img/back_icon.png" alt="back_icon" /></a>
+        <h1 class="text-center">品牌库</h1>
+        <a href="addBrand.html" class="nav-right"><img src="../img/add_icon.png" alt="add_icon" style="width:16px; vertical-align: sub;"/><span>新增</span></a>
+    </nav>
+    <!--nav end-->
+    <div class="row row-padding search-bar">
+    	<a href="#" class="search-icon"><img src="../img/search_icon.png" /></a>
+    	<input type="text" value="" placeholder="搜索" class="btn-block input input-search" />
+    	<a href="#" class="cancel-icon"><img src="../img/cancel_icon.png" /></a>
+    </div>
+    <!--form start-->
+    <form action="#" name="" style="margin-top: 0;">
+       <ul class="media-list">
+       	<li class="media-view-cell"><a href="brandName.html" class="cl row">
+       		<div class="col-sm-4">
+       		    <img src="../img/media_1.jpg" alt="media_list_photo" />
+       		</div>
+       		<div class="media-body col-sm-8">
+       			<div class="row">
+       				<div class="col-sm-9"><p>品牌名称</p></div>
+       				<em class="pull-right status">已入住</em>
+       			</div>
+       			<div class="cl row margin-bt-default"><span class="pull-left">餐饮</span><em class="h4 text-danger pull-right">2间</em></div>
+       			<div class="cl"><span class="pull-left">3级别</span><span class="pull-right">2016-12-30&nbsp;20:45</span></div>
+       			
+       		</div>
+       	</a></li>
+       	<li class="media-view-cell"><a href="brandName.html" class="cl row">
+       		<div class="col-sm-4">
+       		    <img src="../img/media_1.jpg" alt="media_list_photo" />
+       		</div>
+       		<div class="media-body col-sm-8">
+       			<div class="row">
+       				<div class="col-sm-9"><p>品牌名称</p></div>
+       				<em class="pull-right status status-out">未入住</em>
+       			</div>
+       			<div class="cl row margin-bt-default"><span class="pull-left">餐饮</span><em class="h4 text-danger pull-right">2间</em></div>
+       			<div class="cl"><span class="pull-left">3级别</span><span class="pull-right">2016-12-30&nbsp;20:45</span></div>
+       		</div>
+       	</a></li>
+       	<li class="media-view-cell"><a href="brandName.html" class="cl row">
+       		<div class="col-sm-4">
+       		    <img src="../img/media_1.jpg" alt="media_list_photo" />
+       		</div>
+       		<div class="media-body col-sm-8">
+       			<div class="row">
+       				<div class="col-sm-9"><p>品牌名称</p></div>
+       				<em class="pull-right status">已入住</em>
+       			</div>
+       			<div class="cl row margin-bt-default"><span class="pull-left">餐饮</span><em class="h4 text-danger pull-right">2间</em></div>
+       			<div class="cl"><span class="pull-left">3级别</span><span class="pull-right">2016-12-30&nbsp;20:45</span></div>
+       		</div>
+       	</a></li>
+       	
+       </ul>
+       
+    </form>
+    <!--form end-->
+    <div class="bottom-bar bottom-bar-tab">
+			<a class="tab-item operationType" href="#operationType">
+				<p><img src="../img/type_icon.png" alt="业态" style="width:20px;" /></p>
+				<span class="tab-label">业态</span>
+			</a>
+			<a class="tab-item" href="#" id='showUserPicker'>
+				<p><img src="../img/status_icon.png" alt="状态" style="width:20px;"/></p>
+				<span class="tab-label">状态</span>
+			</a>
+			
+	</div>
+</div>
+<div id="mask" class="cl"></div>
+<!-- 业态 -->
+<div id="operationType">
+		<div class="row margin-bt-default">
+			<div class="col-sm-3">
+				<a href="#">百货</a>
+			</div>
+			<div class="col-sm-3">
+				<a href="#">化妆品</a>
+			</div>
+			<div class="col-sm-3">
+				<a href="#">鞋靴</a>
+			</div>
+			<div class="col-sm-3">
+				<a href="#">百货</a>
+			</div>
+		</div>
+		<div class="row margin-bt-default">
+			<div class="col-sm-3">
+				<a href="#">百货</a>
+			</div>
+			<div class="col-sm-3">
+				<a href="#">化妆品</a>
+			</div>
+			<div class="col-sm-3">
+				<a href="#">鞋靴</a>
+			</div>
+			<div class="col-sm-3">
+				<a href="#">百货</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3">
+				<a href="#">百货</a>
+			</div>
+			<div class="col-sm-3">
+				<a href="#">化妆品</a>
+			</div>
+			<div class="col-sm-3">
+				<a href="#">鞋靴</a>
+			</div>
+			<div class="col-sm-3">
+				<a href="#">百货</a>
+			</div>
+		</div>
+</div>
+<!-- 状态选择的值 -->
+<div id='userResult' class="ui-alert" style="display: none;">
+</div>
+<script type="text/javascript" src="../js/dtpicker/mui.min.js" ></script>
+<script type="text/javascript" src="../js/dtpicker/mui.picker.min.js" ></script>
+ <script type="text/javascript" src="../js/normal-js.js" ></script>
+ <script>
+ 	$(function(){
+ 		$(".cancel-icon").hide();
+ 		$(".search-bar").getSearch();
+ 		//业态
+ 		$("#operationType").on("click",function(e){
+			e.stopPropagation();//防止触发冒泡
+		});
+		$(".operationType").on("click",function(e){
+			e.preventDefault();//阻止默认触发事件
+			e.stopPropagation();//防止触发冒泡
+			$("#operationType").modal({
+				maskName:"#mask",
+				targetObject:"#operationType",
+				maskShadow:true,
+				actionBottom:true,
+				actionCenter:false
+			});
+			$("#operationType").find("a").each(function(){
+				$(this).on("click",function(){
+					setTimeout(function(){
+						$("#mask").click();
+					},200);
+				})
+				
+			});
+		});
+ 	})
+ </script>
+ <script>
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					//普通示例
+					var userPicker = new $.PopPicker();
+					userPicker.setData([{
+						value: 'yes',
+						text: '已入住'
+					}, {
+						value: 'no',
+						text: '未入住'
+					}, {
+						value: 'all',
+						text: '全部'
+					}]);
+					var showUserPickerButton = doc.getElementById('showUserPicker');
+					var userResult = doc.getElementById('userResult');
+					showUserPickerButton.addEventListener('tap', function(event) {
+						userPicker.show(function(items) {
+							userResult.innerText = JSON.stringify(items[0]);
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					
+				});
+			})(mui, document);
+</script>
+</body>
+</html>
